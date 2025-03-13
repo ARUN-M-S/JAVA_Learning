@@ -14,18 +14,16 @@ public class CoffeCafe {
         System.out.println("3. Late - \u20B9300/-");
 
         System.out.print("Enter your choice : ");
-        float total;
+        float total=0;
         int choice = scanner.nextInt();
-        if (choice != 1 && choice != 2 && choice != 3) {
-            System.out.println("Invalid Choice");
-
-        }
-        if (choice == 1)
-            total = 200;
-        else if (choice == 2)
-            total = 250;
-        else
-            total = 300;
+      
+switch(choice){
+    case 1 -> total=200;
+    case 2-> total=250;
+    case 3-> total =300;
+    default -> {System.out.println("Invalid Choice");
+return; }
+}
         System.out.print("Add whipped cream for ₹30? (yes=1 / no=0) : ");
 
         int creamChoice = scanner.nextInt();
