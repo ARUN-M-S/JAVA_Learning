@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-
+import java.util.Collections;
 public class Array {
     public static void main(String[] args) {
 // System.out.println("Enter number of rows for first matrix");
@@ -106,9 +106,14 @@ public class Array {
 
 //     }
 int [][] jaggedArray ={{1,2},{1,2,3,4},{1,2,3,4,5,6,}};
-int [] numsArray ={1,2,3,4};
+int [] numsArray ={10,5,8,9,1,2,3,4};
+// Arrays.sort(numsArray,Collections.reverseOrder());
+// Arrays.sort((a,b)=>)
 System.out.println(Arrays.toString(numsArray));
-
+reverseArrays(numsArray);
+int[] numbers = {2,7,3,5} ;
+System.out.println(Arrays.toString(twoSum(numbers,10)));
+// twoSum(numbers,10);
 // displayArray(jaggedArray);
 
     }
@@ -123,4 +128,58 @@ System.out.println(Arrays.toString(numsArray));
         //    System.out.println("The row " + (i+1) +" having : "+ count + " counts");
        }
     }
+
+
+    static void reverseArrays(int [] myArray){
+        if(myArray.length<0) {
+            System.out.println("please give a valid array");
+        }
+
+        for(int i=0;i<myArray.length/2;i++){
+            int temp = myArray[i];
+            System.out.println(temp);
+            myArray[i]=myArray[myArray.length-i-1];
+            myArray[myArray.length-i-1]=temp;
+        }
+        System.out.println("After reverse  "+ Arrays.toString(myArray));
+    }
+    static int [] twoSum(int[] myArray,int target){
+        if(myArray.length<0) {
+            System.out.println("please give a valid array");
+        }
+        Object obj = new Object();
+        // for(int i=0;i<myArray.length;i++){
+        //  for(int j=i+1;j<myArray.length;j++){
+        //      if(myArray[j] == (target-myArray[i])){
+        //          System.out.println("index are " + myArray[i] + myArray[j] );
+        //      }
+        //  }
+        // }
+        int currntIndex =0;
+        int movingIndex =1;
+int [] result = new int[2];
+        while(currntIndex <= myArray.length-1){
+if(myArray[currntIndex] + myArray[movingIndex] == target){
+    System.out.println(currntIndex + " " + movingIndex);
+    result = new int[]{currntIndex,movingIndex};
+    return result;
+    // break;
+}else{
+    if(movingIndex<myArray.length-1){
+        movingIndex++;
+    }else{
+        currntIndex++;
+        movingIndex=currntIndex;
+        
+    }
+   System.out.println(currntIndex + " moving" + movingIndex);
+}
+        }
+        return null;
+        // System.out.println("Not mathcing");
+    }
+
+
+
+    
 }
