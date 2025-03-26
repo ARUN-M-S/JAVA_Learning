@@ -111,8 +111,10 @@ int [] numsArray ={10,5,8,9,1,2,3,4};
 // Arrays.sort((a,b)=>)
 System.out.println(Arrays.toString(numsArray));
 reverseArrays(numsArray);
-int[] numbers = {2,7,3,5} ;
-System.out.println(Arrays.toString(twoSum(numbers,10)));
+int[] numbers = {2,0,7,0,3,5,0} ;
+// System.out.println(Arrays.toString(twoSum(numbers,10)));
+moveZeros(numbers);
+
 // twoSum(numbers,10);
 // displayArray(jaggedArray);
 
@@ -178,8 +180,24 @@ if(myArray[currntIndex] + myArray[movingIndex] == target){
         return null;
         // System.out.println("Not mathcing");
     }
+    // {2,0,7,0,3,5,0} 
+static void moveZeros(int [] myArray){
+    int i=0;
+    for(int j=0;j<myArray.length;j++){
+        if(myArray[j]!=0){
+            int temp = myArray[j];
+            System.out.println("temp " + temp);
+            myArray[j]= myArray[i];
+            System.out.println(" myArray[j] " +  myArray[j]);
+
+            myArray[i]=temp;
+            System.out.println(" myArray[i] " +  myArray[i]);
+            i++;
+        }
+    }
+  
+    System.out.println(Arrays.toString(myArray));
+}
 
 
-
-    
 }
