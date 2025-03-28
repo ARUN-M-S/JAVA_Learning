@@ -196,7 +196,7 @@ static void moveZeros(int [] myArray){
         }
     }
   
-    System.out.println(Arrays.toString(myArray));
+    System.out.println(Arrays.toString(myArray + "My Array"));
 }
 
 
