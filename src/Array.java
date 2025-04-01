@@ -109,11 +109,13 @@ int [][] jaggedArray ={{1,2},{1,2,3,4},{1,2,3,4,5,6,}};
 int [] numsArray ={10,5,8,9,1,2,3,4};
 // Arrays.sort(numsArray,Collections.reverseOrder());
 // Arrays.sort((a,b)=>)
-System.out.println(Arrays.toString(numsArray));
-reverseArrays(numsArray);
-int[] numbers = {2,0,7,0,3,5,0} ;
+// System.out.println(Arrays.toString(numsArray));
+// reverseArrays(numsArray);
+int[] numbers = {0,1,2,4,5} ;
 // System.out.println(Arrays.toString(twoSum(numbers,10)));
-moveZeros(numbers);
+// moveZeros(numbers);
+
+findMissingNumber(numbers);
 
 // twoSum(numbers,10);
 // displayArray(jaggedArray);
@@ -121,9 +123,9 @@ moveZeros(numbers);
     }
 
     static void displayArray(int [][] myArray){
-       for(int i=0;i<myArray.length;i++){
+       for(int i=0;i<=myArray.length;i++){
            int sum=0;
-           for(int j=0;j<myArray[i].length;j++){
+           for(int j=0;j<=myArray[i].length;j++){
                sum =sum+myArray[i][j];
            }
            System.out.println("Rows 1 Sum : " + sum);
@@ -196,8 +198,37 @@ static void moveZeros(int [] myArray){
         }
     }
   
-    System.out.println(Arrays.toString(myArray + "My Array"));
+    System.out.println(Arrays.toString(myArray));
 }
 
 
+
+
+static void findMissingNumber(int [] myArray){
+System.out.println("hererre");
+
+int n=myArray.length;
+int result =  (n*(n+1))/2 ;
+
+System.out.println(result);
+int sum=0;
+for(int i=0;i<myArray.length;i++){
+sum+=myArray[i];
+}
+  
+System.out.println("Missing number is " + (result-sum));
+    // for(int i=0;i<myArray.length;i++){
+    //     int count=0;
+    // for(int j=0;j<myArray.length;j++){
+        
+    //     if(myArray[j]==i){
+    //         count++;
+    //     }
+    // }
+    // if(count<1){
+    //     System.out.println("Missing Number " + i);
+    // }
+    // }
+    // System.out.println("Every thing");
+}
 }
