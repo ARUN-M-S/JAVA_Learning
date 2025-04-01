@@ -111,11 +111,14 @@ int [] numsArray ={10,5,8,9,1,2,3,4};
 // Arrays.sort((a,b)=>)
 // System.out.println(Arrays.toString(numsArray));
 // reverseArrays(numsArray);
-int[] numbers = {0,1,2,4,5} ;
+// int[] numbers = {0,1,2,4,5} ;
+int[] height = {1,8,6,2,5,4,8,3,7} ;
+
 // System.out.println(Arrays.toString(twoSum(numbers,10)));
 // moveZeros(numbers);
 
-findMissingNumber(numbers);
+// findMissingNumber(numbers);
+maximumWaterContainer(height);
 
 // twoSum(numbers,10);
 // displayArray(jaggedArray);
@@ -216,7 +219,7 @@ for(int i=0;i<myArray.length;i++){
 sum+=myArray[i];
 }
   
-System.out.println("Missing number is " + (result-sum));
+// System.out.println("Missing number is " + (result-sum));
     // for(int i=0;i<myArray.length;i++){
     //     int count=0;
     // for(int j=0;j<myArray.length;j++){
@@ -230,5 +233,40 @@ System.out.println("Missing number is " + (result-sum));
     // }
     // }
     // System.out.println("Every thing");
+}
+
+
+static void maximumWaterContainer(int [] heights){
+    int maxArea=0;
+    int left = 0;
+    int right = heights.length-1;
+   do{
+        int w = right-left;
+        int l = Math.min(heights[left],heights[right]);
+int currentArea = w*l;
+if(currentArea>maxArea){
+    maxArea=currentArea;
+
+}
+System.out.println(currentArea);
+if(heights[left]<heights[right]){
+    left++;
+}else{
+    right --;
+}
+
+    } while(left<right);
+    // System.out.println(maxArea);
+    // for(int i=0;i<heights.length;i++){
+    //     for(int j=i+1;j<heights.length;j++){
+    //         int width = j-i;
+    //         int h= Math.min(heights[i], heights[j]);
+    //         int currentArea = width * h;
+    //         if(currentArea>maxArea){
+    //             maxArea = currentArea;
+    //         }
+    //     }
+    // }
+    System.out.println("Maximum is " + maxArea);
 }
 }
