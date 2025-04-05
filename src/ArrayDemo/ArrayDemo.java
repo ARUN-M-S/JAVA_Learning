@@ -17,7 +17,8 @@ public class ArrayDemo {
         arr[4] = 6;
         // insertIntheBegining(arr,size);
         // deleteIntheBegining(arr,size);
-        insertInthePosition(arr,size,3,300);
+        // insertInthePosition(arr,size,3,300);
+        deleteFromPosition(arr,size,1);
 
     }
 
@@ -62,7 +63,17 @@ public class ArrayDemo {
 
 
 
-    // static void delete from S
+    static void deleteFromPosition(int[] arr,int size,int postion){
+for(int i = postion;i<size;i++){
+    arr[i]=arr[i+1];
+
+}
+arr[size]=0;
+size--;
+for (int i = 0; i < size; i++) {
+    System.out.println(arr[i]);
+}
+    }
 }
 
 class Students {
