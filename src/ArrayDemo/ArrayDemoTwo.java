@@ -192,7 +192,37 @@ return mid;
 // ✅ Binary Search on Answer	🔥🔥
 
 
-// static void 
+static int[] findUpperAndLowerBound(int [] arr,int target){
+    int low=0; int high = arr.length-1; int[] result = new int[] {-1,-1};
+
+    while(low<=high){
+        int mid= low+(high- low)/2;
+        if(arr[mid]<target){
+            low = mid+1;
+        }else{
+            high = mid-1;
+        }
+    }
+
+    if(low >=arr.length || arr[low]!= target){
+        return result;
+    }
+    result[0]= low;
+    high =  arr.length-1; int newLow= low;
+    while(low<=high){
+        int mid= low+(high- low)/2;
+        if(arr[mid]<=target){
+            low = mid+1;
+        }else{
+            high = mid-1;
+        }
+    }
+    result[1] = low-1;
+
+    return result;
+
+
+}
 
 
 
@@ -205,8 +235,8 @@ return mid;
         // int result = biDirectional(myArray, 6);
         // System.out.println(result);
         // findMaxCount(myArray);
-      int result=  LowerBound(ex,1);
-      System.out.println(result);
+      int[] result=  findUpperAndLowerBound(ex,3);
+      System.out.println( Arrays.toString(result));
 
         System.out.println(Arrays.toString(ex));
     }
