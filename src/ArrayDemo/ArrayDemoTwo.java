@@ -536,6 +536,49 @@ static int findOccurrences(int [] arr, int key){
    return last-first;
 }
 
+
+static int[] findIndexInMatrix(int [][] arr, int target){
+
+    int row= arr.length;
+    int column = arr[0].length;
+
+    int i=0; int j= column-1;
+
+    for(int k=0;k<row;k++){
+        for(int f= 0;f<column;f++){
+            if(arr[k][f] == target)  return new int[]{k,f};
+        }
+    }
+
+    // while(i<=row && j>=0){
+    //     if( target < arr[i][j])
+    // }
+
+    return new int[]{-1,-1};
+}
+
+
+static int[] findIndexInMatrixRow(int [][] arr, int target){
+
+    int row= arr.length;
+    int column = arr[0].length;
+
+    int i=0; int j= column-1;
+
+
+
+    while(i<=row && j>=0){
+        if( target <= arr[i][j]  && target >=arr[i][0]){
+            int result = binarySearch(arr[i], target);
+            System.out.println(result);
+
+        }else{
+            i++;
+        }
+    }
+
+    return new int[]{-1,-1};
+}
 public static void main(String[] args) {
         // collect2DArrayValues();
         int[] myArray = { 1, 2, 2, 2, 4, 2, 4, 4, 4, 4, 5, 5, 6, 5, 6, 9, 12 };
@@ -544,6 +587,9 @@ public static void main(String[] args) {
         int [] arr = {1,2,3,4,5};
         int [] arr1 = {6,7,8,1,2,3,4,5};
         int [] myARr= {1,0,1,1,1};
+        int[][] unSortedMatrix = {{1,3,4,5},{6,5,2,3},{0,7,2,4}};
+        int[][] SortedMatrixRow = {{1,3,4,5},{6,8,10,23},{26,27,28,29}};
+
 
 
         int k =2;
@@ -553,7 +599,8 @@ public static void main(String[] args) {
         // rotateArray(arr,k,n);
 // int y = findOccurrences(binaryArray,2);
         int y=searchRotatedArray(myARr,0);
-        System.out.println(y);
+        int[] matrixResult= findIndexInMatrixRow(SortedMatrixRow,8);
+        System.out.println(Arrays.toString(matrixResult));
 
 
 
