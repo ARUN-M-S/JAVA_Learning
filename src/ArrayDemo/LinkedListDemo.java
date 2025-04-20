@@ -59,6 +59,20 @@ public class LinkedListDemo {
 
     }
 
+
+
+    static void moveZero(int [] nums){
+int snowball =0;
+int i= 0;
+while(i<nums.length){
+    if(nums[i] ==0){
+        snowball++;
+    }
+
+}
+
+
+    }
     public static void main(String[] args) {
 
         addNode(5);

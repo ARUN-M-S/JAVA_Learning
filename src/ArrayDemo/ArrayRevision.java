@@ -30,6 +30,21 @@ public class ArrayRevision {
         }
         return -1;
     }
+
+static void moveZero(int[] nums){
+    int snow=0;
+    int i =0;
+    while(i<nums.length){
+        if(nums[i]==0){
+            snow++;
+        }else if(snow>0){
+            int temp = nums[i];
+            nums[i]=0;
+            nums[i-snow]=temp;
+        }
+        i++;
+    }
+}
     public static void main(String[] args) {
         int [] arr={1,4,2,5,6,8,9,03};
         int result = linerSearch(arr, 9);
